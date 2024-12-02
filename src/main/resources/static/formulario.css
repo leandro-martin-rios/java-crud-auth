@@ -1,0 +1,99 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Negro suave */
+    color: #f5f5f5; /* Blanco/gris claro */
+    margin: 0;
+    padding: 0;
+}
+
+/* Títulos */
+h1 {
+    color: #00bfff; /* Azul neón */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Formulario */
+form {
+    width: 60%;
+    margin: 20px auto;
+    background-color: #1c1c1c; /* Gris oscuro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #00bfff; /* Azul neón */
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="hidden"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #444; /* Gris */
+    border-radius: 4px;
+    background-color: #2a2a2a; /* Gris medio */
+    color: #f5f5f5; /* Blanco/gris claro */
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    border-color: #00bfff; /* Azul neón */
+    outline: none;
+    box-shadow: 0 0 4px #00bfff;
+}
+
+/* Botón principal */
+button {
+    width: 100%;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #121212; /* Fondo oscuro */
+    background-color: #00bfff; /* Azul neón */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #008fcc; /* Azul más oscuro */
+    color: #ffffff; /* Blanco */
+}
+
+/* Enlace de volver */
+a {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #f5f5f5; /* Blanco/gris claro */
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: #444; /* Gris */
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    background-color: #333; /* Gris más oscuro */
+    color: #00bfff; /* Azul neón */
+}
+
+/* Centrar el enlace al final */
+body > a {
+    text-align: center;
+    margin: 20px auto;
+    display: block;
+    width: 200px; /* No ocupar todo el ancho */
+}

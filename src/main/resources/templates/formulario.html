@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/formulario.css">
+  <title th:text="${proveedor.idProveedor != null ? 'Editar Proveedor' : 'Nuevo Proveedor'}">Proveedor</title>
+</head>
+<body>
+<h1 th:text="${proveedor.idProveedor != null ? 'Editar Proveedor' : 'Nuevo Proveedor'}"></h1>
+<form th:action="${proveedor.idProveedor != null ? '/proveedores/actualizar' : '/proveedores/crear'}" method="post">
+  <input type="hidden" name="id" th:value="${proveedor.idProveedor}" />
+
+  <label for="nombre">Nombre:</label>
+  <input type="text" name="nombre" id="nombre" minlength="3" maxlength="45" required th:value="${proveedor.nombre}" />
+
+  <label for="telefono">Teléfono:</label>
+  <input type="text" name="telefono" pattern="\d{8,20}" id="telefono" minlength="10" maxlength="20" title="Solo numeros" required th:value="${proveedor.telefono}" />
+
+  <label for="direccion">Dirección:</label>
+  <input type="text" name="direccion" id="direccion" minlength="7" maxlength="50" required th:value="${proveedor.direccion}" />
+
+  <label for="email">Email:</label>
+  <input type="text" name="email" id="email" minlength="7" maxlength="200" required th:value="${proveedor.email}" />
+
+  <label for="sitioWeb">Sitio Web:</label>
+  <input type="text" name="sitioWeb" id="sitioWeb" minlength="10" maxlength="100" required th:value="${proveedor.sitioWeb}" />
+
+  <label for="estado">Estado:</label>
+  <select id="estado" name="estado">
+    <option value="1" th:selected="${proveedor.estado == 1}">Activo</option>
+    <option value="2" th:selected="${proveedor.estado == 2}">Inactivo</option>
+    <option value="3" th:selected="${proveedor.estado == 3}">Dado de baja</option>
+  </select>
+
+  <button type="submit" th:text="${proveedor.idProveedor != null ? 'Actualizar' : 'Guardar'}"></button>
+</form>
+<a href="/proveedores">Volver</a>
+</body>
+</html>

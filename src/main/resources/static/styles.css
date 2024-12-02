@@ -1,0 +1,105 @@
+/* Global styles */
+* {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body.bodyLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background: none;
+    overflow: hidden;
+}
+
+/* Background */
+body.bodyLogin::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("background.png") no-repeat center center/cover;
+    filter: blur(3px); /* Desenfoque del fondo */
+    z-index: -1; /* Colocar detrás del formulario */
+}
+
+/* Form styles */
+form.formLogin {
+    background-color: rgba(40, 40, 40, 0.95); /* Fondo semi-transparente */
+    border: 2px solid #d38c20; /* Borde amarillo neón */
+    border-radius: 30px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 10; /* Asegurarse de estar sobre el fondo */
+}
+
+/* Form header */
+form.formLogin h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+    text-shadow: 0 0 10px #ffd700;
+}
+
+/* Inputs */
+form.formLogin input[type="text"],
+form.formLogin input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555555;
+    border-radius: 8px;
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    font-size: 1rem;
+}
+
+form.formLogin input:focus {
+    outline: none;
+    border: 1px solid #ffd700;
+    box-shadow: 0 0 8px #ffd700;
+}
+
+/* Button */
+form.formLogin button {
+    background-color: #ffd700;
+    border: none;
+    border-radius: 8px;
+    color: #1c1c1c;
+    font-size: 1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form.formLogin button:hover {
+    background-color: #e5c700;
+    transform: scale(1.05);
+}
+
+form.formLogin button:active {
+    background-color: #b59f00;
+    transform: scale(0.98);
+}
+
+/* Warning message */
+p.formTextWarning {
+    color: #ff4b4b;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}

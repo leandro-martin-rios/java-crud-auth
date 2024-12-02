@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio - Listado de Proveedores</title>
+  <link rel="stylesheet" href="/proveedores.css">
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Telefono</th>
+      <th>Dirección</th>
+      <th>Email</th>
+      <th>Sitio Web</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+    <tr th:each="proveedores : ${proveedores}">
+      <td th:text="${proveedores.nombre}"></td>
+      <td th:text="${proveedores.telefono}"></td>
+      <td th:text="${proveedores.direccion}"></td>
+      <td th:text="${proveedores.email}"></td>
+      <td th:text="${proveedores.sitioWeb}"></td>
+      <td>
+        <span th:if="${proveedores.estado == 1}">Activo</span>
+        <span th:if="${proveedores.estado == 2}">Inactivo</span>
+        <span th:if="${proveedores.estado == 3}">Dado de baja</span>
+      </td>
+      <td>
+        <a th:href="@{/proveedores/eliminar/{id}(id=${proveedores.idProveedor})}">Eliminar</a>
+        <a th:href="@{/proveedores/editar/{id}(id=${proveedores.idProveedor})}">Editar</a>
+      </td>
+    </tr>
+  </table>
+
+  <a href="/proveedores/nuevo">Nuevo Proveedor</a>
+</body>
+</html>
